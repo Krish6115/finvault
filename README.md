@@ -375,4 +375,4 @@ MIT
 
 ---
 
-*Built with ❤️ for the Zorvyn FinTech Backend Developer Intern Assignment*
+*Built with ❤️ by Krishna Reddy for the Zorvyn FinTech Backend Developer Intern Assignment*
