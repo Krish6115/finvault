@@ -1,0 +1,89 @@
+// ──────────────────────────────────────────────
+// FinVault — Prisma Schema
+// ──────────────────────────────────────────────
+// This schema defines the core data models for
+// the Finance Data Processing & Access Control
+// Backend. It includes User management with
+// role-based access and Financial Record tracking
+// with soft-delete support.
+// ──────────────────────────────────────────────
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = env("DATABASE_URL")
+}
+
+// ──────────────────────────────────────────────
+// User Model
+// ──────────────────────────────────────────────
+// Represents a system user with role-based access.
+// Roles determine what actions a user can perform:
+//   - VIEWER:  Read-only access to dashboard summaries
+//   - ANALYST: Read access to records and analytics
+//   - ADMIN:   Full management access to everything
+//
+// Users can be soft-deleted (deletedAt) to preserve
+// audit trails while disabling access.
+// ──────────────────────────────────────────────
+
+model User {
+  id        String   @id @default(uuid())
+  email     String   @unique
+  name      String
+  password  String
+  role      String   @default("VIEWER") // VIEWER | ANALYST | ADMIN
+  status    String   @default("ACTIVE") // ACTIVE | INACTIVE
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+  deletedAt DateTime? // Soft delete — null means active
+
+  // Relations
+  records FinancialRecord[]
+
+  @@index([email])
+  @@index([role])
+  @@index([status])
+  @@map("users")
+}
+
+// ──────────────────────────────────────────────
+// Financial Record Model
+// ──────────────────────────────────────────────
+// Represents a single financial transaction entry.
+// Each record belongs to a specific user and tracks:
+//   - Amount: The monetary value of the transaction
+//   - Type:   INCOME or EXPENSE
+//   - Category: Business category for grouping
+//   - Date:   When the transaction occurred
+//
+// Records support soft-delete to maintain
+// historical data integrity for audit purposes.
+// ──────────────────────────────────────────────
+
+model FinancialRecord {
+  id          String   @id @default(uuid())
+  amount      Float
+  type        String   // INCOME | EXPENSE
+  category    String
+  date        DateTime
+  description String?
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+  deletedAt   DateTime? // Soft delete — null means active
+
+  // Relations
+  userId String
+  user   User   @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@index([type])
+  @@index([category])
+  @@index([date])
+  @@index([userId])
+  @@index([type, category]) // Composite index for filtered queries
+  @@index([userId, date])   // Composite index for user-specific date queries
+  @@map("financial_records")
+}

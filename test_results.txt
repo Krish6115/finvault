@@ -1,0 +1,450 @@
+﻿(node:14200) [DEP0169] DeprecationWarning: `url.parse()` behavior is not standardized and prone to errors that have security implications. Use the WHATWG URL API instead. CVEs are not issued for `url.parse()` vulnerabilities.
+(Use `node --trace-deprecation ...` to show where the warning was created)
+(node:2908) [DEP0169] DeprecationWarning: `url.parse()` behavior is not standardized and prone to errors that have security implications. Use the WHATWG URL API instead. CVEs are not issued for `url.parse()` vulnerabilities.
+(Use `node --trace-deprecation ...` to show where the warning was created)
+  console.warn
+    [2026-04-02T09:30:31.346Z] [WARN] AppError: An account with this email already exists. {"statusCode":409,"isOperational":true}
+
+    [0m [90m 62 |[39m   [90m/** Warning logs ΓÇö recoverable issues that need attention */[39m
+     [90m 63 |[39m   warn(message[33m:[39m string[33m,[39m context[33m?[39m[33m:[39m [33mRecord[39m[33m<[39m[33mstring[39m[33m,[39m unknown[33m>[39m)[33m:[39m [36mvoid[39m {
+    [31m[1m>[22m[39m[90m 64 |[39m     console[33m.[39mwarn(formatMessage([32m'WARN'[39m[33m,[39m message[33m,[39m context))[33m;[39m
+     [90m    |[39m             [31m[1m^[22m[39m
+     [90m 65 |[39m   }[33m,[39m
+     [90m 66 |[39m
+     [90m 67 |[39m   [90m/** Error logs ΓÇö failures that need immediate investigation */[39m[0m
+
+      at Object.warn (src/utils/logger.ts:64:13)
+      at errorHandler (src/middleware/errorHandler.ts:105:12)
+      at Layer.handle_error (node_modules/express/lib/router/layer.js:71:5)
+      at trim_prefix (node_modules/express/lib/router/index.js:326:13)
+      at node_modules/express/lib/router/index.js:286:9
+      at router.process_params (node_modules/express/lib/router/index.js:346:12)
+      at next (node_modules/express/lib/router/index.js:280:10)
+      at node_modules/express/lib/router/index.js:646:15
+      at next (node_modules/express/lib/router/index.js:265:14)
+      at next (node_modules/express/lib/router/route.js:141:14)
+      at register (src/modules/auth/auth.controller.ts:47:5)
+
+  console.warn
+    [2026-04-02T09:30:31.402Z] [WARN] AppError: An account with this email already exists. {"statusCode":409,"isOperational":true}
+
+    [0m [90m 62 |[39m   [90m/** Warning logs ΓÇö recoverable issues that need attention */[39m
+     [90m 63 |[39m   warn(message[33m:[39m string[33m,[39m context[33m?[39m[33m:[39m [33mRecord[39m[33m<[39m[33mstring[39m[33m,[39m unknown[33m>[39m)[33m:[39m [36mvoid[39m {
+    [31m[1m>[22m[39m[90m 64 |[39m     console[33m.[39mwarn(formatMessage([32m'WARN'[39m[33m,[39m message[33m,[39m context))[33m;[39m
+     [90m    |[39m             [31m[1m^[22m[39m
+     [90m 65 |[39m   }[33m,[39m
+     [90m 66 |[39m
+     [90m 67 |[39m   [90m/** Error logs ΓÇö failures that need immediate investigation */[39m[0m
+
+      at Object.warn (src/utils/logger.ts:64:13)
+      at errorHandler (src/middleware/errorHandler.ts:105:12)
+      at Layer.handle_error (node_modules/express/lib/router/layer.js:71:5)
+      at trim_prefix (node_modules/express/lib/router/index.js:326:13)
+      at node_modules/express/lib/router/index.js:286:9
+      at router.process_params (node_modules/express/lib/router/index.js:346:12)
+      at next (node_modules/express/lib/router/index.js:280:10)
+      at node_modules/express/lib/router/index.js:646:15
+      at next (node_modules/express/lib/router/index.js:265:14)
+      at next (node_modules/express/lib/router/route.js:141:14)
+      at register (src/modules/auth/auth.controller.ts:47:5)
+
+  console.warn
+    [2026-04-02T09:30:31.412Z] [WARN] Validation error {"fields":{"email":"Please provide a valid email address"}}
+
+    [0m [90m 62 |[39m   [90m/** Warning logs ΓÇö recoverable issues that need attention */[39m
+     [90m 63 |[39m   warn(message[33m:[39m string[33m,[39m context[33m?[39m[33m:[39m [33mRecord[39m[33m<[39m[33mstring[39m[33m,[39m unknown[33m>[39m)[33m:[39m [36mvoid[39m {
+    [31m[1m>[22m[39m[90m 64 |[39m     console[33m.[39mwarn(formatMessage([32m'WARN'[39m[33m,[39m message[33m,[39m context))[33m;[39m
+     [90m    |[39m             [31m[1m^[22m[39m
+     [90m 65 |[39m   }[33m,[39m
+     [90m 66 |[39m
+     [90m 67 |[39m   [90m/** Error logs ΓÇö failures that need immediate investigation */[39m[0m
+
+      at Object.warn (src/utils/logger.ts:64:13)
+      at errorHandler (src/middleware/errorHandler.ts:120:12)
+      at Layer.handle_error (node_modules/express/lib/router/layer.js:71:5)
+      at trim_prefix (node_modules/express/lib/router/index.js:326:13)
+      at node_modules/express/lib/router/index.js:286:9
+      at router.process_params (node_modules/express/lib/router/index.js:346:12)
+      at next (node_modules/express/lib/router/index.js:280:10)
+      at node_modules/express/lib/router/index.js:646:15
+      at next (node_modules/express/lib/router/index.js:265:14)
+      at next (node_modules/express/lib/router/route.js:141:14)
+      at Layer.handle_error (node_modules/express/lib/router/layer.js:67:12)
+      at next (node_modules/express/lib/router/route.js:147:13)
+      at src/middleware/validate.ts:82:16
+      at Layer.handle [as handle_request] (node_modules/express/lib/router/layer.js:95:5)
+      at next (node_modules/express/lib/router/route.js:149:13)
+      at Route.dispatch (node_modules/express/lib/router/route.js:119:3)
+      at Layer.handle [as handle_request] (node_modules/express/lib/router/layer.js:95:5)
+      at node_modules/express/lib/router/index.js:284:15
+      at router.process_params (node_modules/express/lib/router/index.js:346:12)
+      at next (node_modules/express/lib/router/index.js:280:10)
+      at router.handle (node_modules/express/lib/router/index.js:175:3)
+      at router (node_modules/express/lib/router/index.js:47:12)
+      at Layer.handle [as handle_request] (node_modules/express/lib/router/layer.js:95:5)
+      at trim_prefix (node_modules/express/lib/router/index.js:328:13)
+      at node_modules/express/lib/router/index.js:286:9
+      at router.process_params (node_modules/express/lib/router/index.js:346:12)
+      at next (node_modules/express/lib/router/index.js:280:10)
+      at urlencodedParser (node_modules/body-parser/lib/types/urlencoded.js:82:7)
+      at Layer.handle [as handle_request] (node_modules/express/lib/router/layer.js:95:5)
+      at trim_prefix (node_modules/express/lib/router/index.js:328:13)
+      at node_modules/express/lib/router/index.js:286:9
+      at router.process_params (node_modules/express/lib/router/index.js:346:12)
+      at next (node_modules/express/lib/router/index.js:280:10)
+      at node_modules/body-parser/lib/read.js:137:5
+      at invokeCallback (node_modules/raw-body/index.js:238:16)
+      at done (node_modules/raw-body/index.js:227:7)
+      at IncomingMessage.onEnd (node_modules/raw-body/index.js:287:7)
+
+  console.warn
+    [2026-04-02T09:30:31.423Z] [WARN] Validation error {"fields":{"password":"Password must contain at least one uppercase letter, one lowercase letter, and one digit"}}
+
+    [0m [90m 62 |[39m   [90m/** Warning logs ΓÇö recoverable issues that need attention */[39m
+     [90m 63 |[39m   warn(message[33m:[39m string[33m,[39m context[33m?[39m[33m:[39m [33mRecord[39m[33m<[39m[33mstring[39m[33m,[39m unknown[33m>[39m)[33m:[39m [36mvoid[39m {
+    [31m[1m>[22m[39m[90m 64 |[39m     console[33m.[39mwarn(formatMessage([32m'WARN'[39m[33m,[39m message[33m,[39m context))[33m;[39m
+     [90m    |[39m             [31m[1m^[22m[39m
+     [90m 65 |[39m   }[33m,[39m
+     [90m 66 |[39m
+     [90m 67 |[39m   [90m/** Error logs ΓÇö failures that need immediate investigation */[39m[0m
+
+      at Object.warn (src/utils/logger.ts:64:13)
+      at errorHandler (src/middleware/errorHandler.ts:120:12)
+      at Layer.handle_error (node_modules/express/lib/router/layer.js:71:5)
+      at trim_prefix (node_modules/express/lib/router/index.js:326:13)
+      at node_modules/express/lib/router/index.js:286:9
+      at router.process_params (node_modules/express/lib/router/index.js:346:12)
+      at next (node_modules/express/lib/router/index.js:280:10)
+      at node_modules/express/lib/router/index.js:646:15
+      at next (node_modules/express/lib/router/index.js:265:14)
+      at next (node_modules/express/lib/router/route.js:141:14)
+      at Layer.handle_error (node_modules/express/lib/router/layer.js:67:12)
+      at next (node_modules/express/lib/router/route.js:147:13)
+      at src/middleware/validate.ts:82:16
+      at Layer.handle [as handle_request] (node_modules/express/lib/router/layer.js:95:5)
+      at next (node_modules/express/lib/router/route.js:149:13)
+      at Route.dispatch (node_modules/express/lib/router/route.js:119:3)
+      at Layer.handle [as handle_request] (node_modules/express/lib/router/layer.js:95:5)
+      at node_modules/express/lib/router/index.js:284:15
+      at router.process_params (node_modules/express/lib/router/index.js:346:12)
+      at next (node_modules/express/lib/router/index.js:280:10)
+      at router.handle (node_modules/express/lib/router/index.js:175:3)
+      at router (node_modules/express/lib/router/index.js:47:12)
+      at Layer.handle [as handle_request] (node_modules/express/lib/router/layer.js:95:5)
+      at trim_prefix (node_modules/express/lib/router/index.js:328:13)
+      at node_modules/express/lib/router/index.js:286:9
+      at router.process_params (node_modules/express/lib/router/index.js:346:12)
+      at next (node_modules/express/lib/router/index.js:280:10)
+      at urlencodedParser (node_modules/body-parser/lib/types/urlencoded.js:82:7)
+      at Layer.handle [as handle_request] (node_modules/express/lib/router/layer.js:95:5)
+      at trim_prefix (node_modules/express/lib/router/index.js:328:13)
+      at node_modules/express/lib/router/index.js:286:9
+      at router.process_params (node_modules/express/lib/router/index.js:346:12)
+      at next (node_modules/express/lib/router/index.js:280:10)
+      at node_modules/body-parser/lib/read.js:137:5
+      at invokeCallback (node_modules/raw-body/index.js:238:16)
+      at done (node_modules/raw-body/index.js:227:7)
+      at IncomingMessage.onEnd (node_modules/raw-body/index.js:287:7)
+
+  console.warn
+    [2026-04-02T09:30:31.430Z] [WARN] Validation error {"fields":{"name":"Name is required","password":"Password is required"}}
+
+    [0m [90m 62 |[39m   [90m/** Warning logs ΓÇö recoverable issues that need attention */[39m
+     [90m 63 |[39m   warn(message[33m:[39m string[33m,[39m context[33m?[39m[33m:[39m [33mRecord[39m[33m<[39m[33mstring[39m[33m,[39m unknown[33m>[39m)[33m:[39m [36mvoid[39m {
+    [31m[1m>[22m[39m[90m 64 |[39m     console[33m.[39mwarn(formatMessage([32m'WARN'[39m[33m,[39m message[33m,[39m context))[33m;[39m
+     [90m    |[39m             [31m[1m^[22m[39m
+     [90m 65 |[39m   }[33m,[39m
+     [90m 66 |[39m
+     [90m 67 |[39m   [90m/** Error logs ΓÇö failures that need immediate investigation */[39m[0m
+
+      at Object.warn (src/utils/logger.ts:64:13)
+      at errorHandler (src/middleware/errorHandler.ts:120:12)
+      at Layer.handle_error (node_modules/express/lib/router/layer.js:71:5)
+      at trim_prefix (node_modules/express/lib/router/index.js:326:13)
+      at node_modules/express/lib/router/index.js:286:9
+      at router.process_params (node_modules/express/lib/router/index.js:346:12)
+      at next (node_modules/express/lib/router/index.js:280:10)
+      at node_modules/express/lib/router/index.js:646:15
+      at next (node_modules/express/lib/router/index.js:265:14)
+      at next (node_modules/express/lib/router/route.js:141:14)
+      at Layer.handle_error (node_modules/express/lib/router/layer.js:67:12)
+      at next (node_modules/express/lib/router/route.js:147:13)
+      at src/middleware/validate.ts:82:16
+      at Layer.handle [as handle_request] (node_modules/express/lib/router/layer.js:95:5)
+      at next (node_modules/express/lib/router/route.js:149:13)
+      at Route.dispatch (node_modules/express/lib/router/route.js:119:3)
+      at Layer.handle [as handle_request] (node_modules/express/lib/router/layer.js:95:5)
+      at node_modules/express/lib/router/index.js:284:15
+      at router.process_params (node_modules/express/lib/router/index.js:346:12)
+      at next (node_modules/express/lib/router/index.js:280:10)
+      at router.handle (node_modules/express/lib/router/index.js:175:3)
+      at router (node_modules/express/lib/router/index.js:47:12)
+      at Layer.handle [as handle_request] (node_modules/express/lib/router/layer.js:95:5)
+      at trim_prefix (node_modules/express/lib/router/index.js:328:13)
+      at node_modules/express/lib/router/index.js:286:9
+      at router.process_params (node_modules/express/lib/router/index.js:346:12)
+      at next (node_modules/express/lib/router/index.js:280:10)
+      at urlencodedParser (node_modules/body-parser/lib/types/urlencoded.js:82:7)
+      at Layer.handle [as handle_request] (node_modules/express/lib/router/layer.js:95:5)
+      at trim_prefix (node_modules/express/lib/router/index.js:328:13)
+      at node_modules/express/lib/router/index.js:286:9
+      at router.process_params (node_modules/express/lib/router/index.js:346:12)
+      at next (node_modules/express/lib/router/index.js:280:10)
+      at node_modules/body-parser/lib/read.js:137:5
+      at invokeCallback (node_modules/raw-body/index.js:238:16)
+      at done (node_modules/raw-body/index.js:227:7)
+      at IncomingMessage.onEnd (node_modules/raw-body/index.js:287:7)
+
+  console.warn
+    [2026-04-02T09:30:31.748Z] [WARN] AppError: Authentication required. Please provide a valid Bearer token. {"statusCode":401,"isOperational":true}
+
+    [0m [90m 62 |[39m   [90m/** Warning logs ΓÇö recoverable issues that need attention */[39m
+     [90m 63 |[39m   warn(message[33m:[39m string[33m,[39m context[33m?[39m[33m:[39m [33mRecord[39m[33m<[39m[33mstring[39m[33m,[39m unknown[33m>[39m)[33m:[39m [36mvoid[39m {
+    [31m[1m>[22m[39m[90m 64 |[39m     console[33m.[39mwarn(formatMessage([32m'WARN'[39m[33m,[39m message[33m,[39m context))[33m;[39m
+     [90m    |[39m             [31m[1m^[22m[39m
+     [90m 65 |[39m   }[33m,[39m
+     [90m 66 |[39m
+     [90m 67 |[39m   [90m/** Error logs ΓÇö failures that need immediate investigation */[39m[0m
+
+      at Object.warn (src/utils/logger.ts:64:13)
+      at errorHandler (src/middleware/errorHandler.ts:105:12)
+      at Layer.handle_error (node_modules/express/lib/router/layer.js:71:5)
+      at trim_prefix (node_modules/express/lib/router/index.js:326:13)
+      at node_modules/express/lib/router/index.js:286:9
+      at router.process_params (node_modules/express/lib/router/index.js:346:12)
+      at next (node_modules/express/lib/router/index.js:280:10)
+      at node_modules/express/lib/router/index.js:646:15
+      at next (node_modules/express/lib/router/index.js:265:14)
+      at authenticate (src/middleware/auth.ts:128:5)
+      at Layer.handle [as handle_request] (node_modules/express/lib/router/layer.js:95:5)
+      at trim_prefix (node_modules/express/lib/router/index.js:328:13)
+      at node_modules/express/lib/router/index.js:286:9
+      at router.process_params (node_modules/express/lib/router/index.js:346:12)
+      at next (node_modules/express/lib/router/index.js:280:10)
+      at router.handle (node_modules/express/lib/router/index.js:175:3)
+      at router (node_modules/express/lib/router/index.js:47:12)
+      at Layer.handle [as handle_request] (node_modules/express/lib/router/layer.js:95:5)
+      at trim_prefix (node_modules/express/lib/router/index.js:328:13)
+      at node_modules/express/lib/router/index.js:286:9
+      at router.process_params (node_modules/express/lib/router/index.js:346:12)
+      at next (node_modules/express/lib/router/index.js:280:10)
+      at urlencodedParser (node_modules/body-parser/lib/types/urlencoded.js:91:7)
+      at Layer.handle [as handle_request] (node_modules/express/lib/router/layer.js:95:5)
+      at trim_prefix (node_modules/express/lib/router/index.js:328:13)
+      at node_modules/express/lib/router/index.js:286:9
+      at router.process_params (node_modules/express/lib/router/index.js:346:12)
+      at next (node_modules/express/lib/router/index.js:280:10)
+      at jsonParser (node_modules/body-parser/lib/types/json.js:113:7)
+      at Layer.handle [as handle_request] (node_modules/express/lib/router/layer.js:95:5)
+      at trim_prefix (node_modules/express/lib/router/index.js:328:13)
+      at node_modules/express/lib/router/index.js:286:9
+      at router.process_params (node_modules/express/lib/router/index.js:346:12)
+      at next (node_modules/express/lib/router/index.js:280:10)
+      at node_modules/express-rate-limit/dist/index.cjs:807:7
+      at node_modules/express-rate-limit/dist/index.cjs:691:5
+
+FAIL tests/dashboard.test.ts
+  GET /api/v1/dashboard/summary
+    ΓêÜ should return the correct financial summary (19 ms)
+    ΓêÜ should be accessible to VIEWER role (10 ms)
+    ΓêÜ should reject unauthenticated requests (43 ms)
+  GET /api/v1/dashboard/category-summary
+    ΓêÜ should return income and expense categories (11 ms)
+    ├ù should block VIEWER role from accessing category-summary (8 ms)
+  GET /api/v1/dashboard/trends
+    ΓêÜ should return monthly trends with the correct structure (23 ms)
+    ΓêÜ should return weekly trends when period=weekly (11 ms)
+    ├ù should block VIEWER role from accessing trends (9 ms)
+  GET /api/v1/dashboard/recent-activity
+    ΓêÜ should return the 10 most recent transactions (9 ms)
+    ΓêÜ should be accessible to VIEWER role (9 ms)
+System.Management.Automation.RemoteException
+  ΓùÅ GET /api/v1/dashboard/category-summary ΓÇ║ should block VIEWER role from accessing category-summary
+System.Management.Automation.RemoteException
+    expect(received).toBe(expected) // Object.is equality
+System.Management.Automation.RemoteException
+    Expected: 403
+    Received: 200
+System.Management.Automation.RemoteException
+    [0m [90m 148 |[39m       [33m.[39m[36mset[39m([32m'Authorization'[39m[33m,[39m [32m`Bearer ${viewerToken}`[39m)[33m;[39m
+     [90m 149 |[39m
+    [31m[1m>[22m[39m[90m 150 |[39m     expect(res[33m.[39mstatus)[33m.[39mtoBe([35m403[39m)[33m;[39m
+     [90m     |[39m                        [31m[1m^[22m[39m
+     [90m 151 |[39m     expect(res[33m.[39mbody[33m.[39msuccess)[33m.[39mtoBe([36mfalse[39m)[33m;[39m
+     [90m 152 |[39m   })[33m;[39m
+     [90m 153 |[39m })[33m;[39m[0m
+System.Management.Automation.RemoteException
+      at Object.<anonymous> (tests/dashboard.test.ts:150:24)
+System.Management.Automation.RemoteException
+  ΓùÅ GET /api/v1/dashboard/trends ΓÇ║ should block VIEWER role from accessing trends
+System.Management.Automation.RemoteException
+    expect(received).toBe(expected) // Object.is equality
+System.Management.Automation.RemoteException
+    Expected: 403
+    Received: 200
+System.Management.Automation.RemoteException
+    [0m [90m 210 |[39m       [33m.[39m[36mset[39m([32m'Authorization'[39m[33m,[39m [32m`Bearer ${viewerToken}`[39m)[33m;[39m
+     [90m 211 |[39m
+    [31m[1m>[22m[39m[90m 212 |[39m     expect(res[33m.[39mstatus)[33m.[39mtoBe([35m403[39m)[33m;[39m
+     [90m     |[39m                        [31m[1m^[22m[39m
+     [90m 213 |[39m   })[33m;[39m
+     [90m 214 |[39m })[33m;[39m
+     [90m 215 |[39m[0m
+System.Management.Automation.RemoteException
+      at Object.<anonymous> (tests/dashboard.test.ts:212:24)
+System.Management.Automation.RemoteException
+  console.warn
+    [2026-04-02T09:30:32.331Z] [WARN] AppError: Invalid email or password. {"statusCode":401,"isOperational":true}
+
+    [0m [90m 62 |[39m   [90m/** Warning logs ΓÇö recoverable issues that need attention */[39m
+     [90m 63 |[39m   warn(message[33m:[39m string[33m,[39m context[33m?[39m[33m:[39m [33mRecord[39m[33m<[39m[33mstring[39m[33m,[39m unknown[33m>[39m)[33m:[39m [36mvoid[39m {
+    [31m[1m>[22m[39m[90m 64 |[39m     console[33m.[39mwarn(formatMessage([32m'WARN'[39m[33m,[39m message[33m,[39m context))[33m;[39m
+     [90m    |[39m             [31m[1m^[22m[39m
+     [90m 65 |[39m   }[33m,[39m
+     [90m 66 |[39m
+     [90m 67 |[39m   [90m/** Error logs ΓÇö failures that need immediate investigation */[39m[0m
+
+      at Object.warn (src/utils/logger.ts:64:13)
+      at errorHandler (src/middleware/errorHandler.ts:105:12)
+      at Layer.handle_error (node_modules/express/lib/router/layer.js:71:5)
+      at trim_prefix (node_modules/express/lib/router/index.js:326:13)
+      at node_modules/express/lib/router/index.js:286:9
+      at router.process_params (node_modules/express/lib/router/index.js:346:12)
+      at next (node_modules/express/lib/router/index.js:280:10)
+      at node_modules/express/lib/router/index.js:646:15
+      at next (node_modules/express/lib/router/index.js:265:14)
+      at next (node_modules/express/lib/router/route.js:141:14)
+      at login (src/modules/auth/auth.controller.ts:73:5)
+
+  console.warn
+    [2026-04-02T09:30:32.344Z] [WARN] AppError: Invalid email or password. {"statusCode":401,"isOperational":true}
+
+    [0m [90m 62 |[39m   [90m/** Warning logs ΓÇö recoverable issues that need attention */[39m
+     [90m 63 |[39m   warn(message[33m:[39m string[33m,[39m context[33m?[39m[33m:[39m [33mRecord[39m[33m<[39m[33mstring[39m[33m,[39m unknown[33m>[39m)[33m:[39m [36mvoid[39m {
+    [31m[1m>[22m[39m[90m 64 |[39m     console[33m.[39mwarn(formatMessage([32m'WARN'[39m[33m,[39m message[33m,[39m context))[33m;[39m
+     [90m    |[39m             [31m[1m^[22m[39m
+     [90m 65 |[39m   }[33m,[39m
+     [90m 66 |[39m
+     [90m 67 |[39m   [90m/** Error logs ΓÇö failures that need immediate investigation */[39m[0m
+
+      at Object.warn (src/utils/logger.ts:64:13)
+      at errorHandler (src/middleware/errorHandler.ts:105:12)
+      at Layer.handle_error (node_modules/express/lib/router/layer.js:71:5)
+      at trim_prefix (node_modules/express/lib/router/index.js:326:13)
+      at node_modules/express/lib/router/index.js:286:9
+      at router.process_params (node_modules/express/lib/router/index.js:346:12)
+      at next (node_modules/express/lib/router/index.js:280:10)
+      at node_modules/express/lib/router/index.js:646:15
+      at next (node_modules/express/lib/router/index.js:265:14)
+      at next (node_modules/express/lib/router/route.js:141:14)
+      at login (src/modules/auth/auth.controller.ts:73:5)
+
+  console.warn
+    [2026-04-02T09:30:32.360Z] [WARN] AppError: Invalid email or password. {"statusCode":401,"isOperational":true}
+
+    [0m [90m 62 |[39m   [90m/** Warning logs ΓÇö recoverable issues that need attention */[39m
+     [90m 63 |[39m   warn(message[33m:[39m string[33m,[39m context[33m?[39m[33m:[39m [33mRecord[39m[33m<[39m[33mstring[39m[33m,[39m unknown[33m>[39m)[33m:[39m [36mvoid[39m {
+    [31m[1m>[22m[39m[90m 64 |[39m     console[33m.[39mwarn(formatMessage([32m'WARN'[39m[33m,[39m message[33m,[39m context))[33m;[39m
+     [90m    |[39m             [31m[1m^[22m[39m
+     [90m 65 |[39m   }[33m,[39m
+     [90m 66 |[39m
+     [90m 67 |[39m   [90m/** Error logs ΓÇö failures that need immediate investigation */[39m[0m
+
+      at Object.warn (src/utils/logger.ts:64:13)
+      at errorHandler (src/middleware/errorHandler.ts:105:12)
+      at Layer.handle_error (node_modules/express/lib/router/layer.js:71:5)
+      at trim_prefix (node_modules/express/lib/router/index.js:326:13)
+      at node_modules/express/lib/router/index.js:286:9
+      at router.process_params (node_modules/express/lib/router/index.js:346:12)
+      at next (node_modules/express/lib/router/index.js:280:10)
+      at node_modules/express/lib/router/index.js:646:15
+      at next (node_modules/express/lib/router/index.js:265:14)
+      at next (node_modules/express/lib/router/route.js:141:14)
+      at login (src/modules/auth/auth.controller.ts:73:5)
+
+  console.warn
+    [2026-04-02T09:30:32.998Z] [WARN] AppError: Invalid email or password. {"statusCode":401,"isOperational":true}
+
+    [0m [90m 62 |[39m   [90m/** Warning logs ΓÇö recoverable issues that need attention */[39m
+     [90m 63 |[39m   warn(message[33m:[39m string[33m,[39m context[33m?[39m[33m:[39m [33mRecord[39m[33m<[39m[33mstring[39m[33m,[39m unknown[33m>[39m)[33m:[39m [36mvoid[39m {
+    [31m[1m>[22m[39m[90m 64 |[39m     console[33m.[39mwarn(formatMessage([32m'WARN'[39m[33m,[39m message[33m,[39m context))[33m;[39m
+     [90m    |[39m             [31m[1m^[22m[39m
+     [90m 65 |[39m   }[33m,[39m
+     [90m 66 |[39m
+     [90m 67 |[39m   [90m/** Error logs ΓÇö failures that need immediate investigation */[39m[0m
+
+      at Object.warn (src/utils/logger.ts:64:13)
+      at errorHandler (src/middleware/errorHandler.ts:105:12)
+      at Layer.handle_error (node_modules/express/lib/router/layer.js:71:5)
+      at trim_prefix (node_modules/express/lib/router/index.js:326:13)
+      at node_modules/express/lib/router/index.js:286:9
+      at router.process_params (node_modules/express/lib/router/index.js:346:12)
+      at next (node_modules/express/lib/router/index.js:280:10)
+      at node_modules/express/lib/router/index.js:646:15
+      at next (node_modules/express/lib/router/index.js:265:14)
+      at next (node_modules/express/lib/router/route.js:141:14)
+      at login (src/modules/auth/auth.controller.ts:73:5)
+
+  console.warn
+    [2026-04-02T09:30:33.022Z] [WARN] AppError: Authentication required. Please provide a valid Bearer token. {"statusCode":401,"isOperational":true}
+
+    [0m [90m 62 |[39m   [90m/** Warning logs ΓÇö recoverable issues that need attention */[39m
+     [90m 63 |[39m   warn(message[33m:[39m string[33m,[39m context[33m?[39m[33m:[39m [33mRecord[39m[33m<[39m[33mstring[39m[33m,[39m unknown[33m>[39m)[33m:[39m [36mvoid[39m {
+    [31m[1m>[22m[39m[90m 64 |[39m     console[33m.[39mwarn(formatMessage([32m'WARN'[39m[33m,[39m message[33m,[39m context))[33m;[39m
+     [90m    |[39m             [31m[1m^[22m[39m
+     [90m 65 |[39m   }[33m,[39m
+     [90m 66 |[39m
+     [90m 67 |[39m   [90m/** Error logs ΓÇö failures that need immediate investigation */[39m[0m
+
+      at Object.warn (src/utils/logger.ts:64:13)
+      at errorHandler (src/middleware/errorHandler.ts:105:12)
+      at Layer.handle_error (node_modules/express/lib/router/layer.js:71:5)
+      at trim_prefix (node_modules/express/lib/router/index.js:326:13)
+      at node_modules/express/lib/router/index.js:286:9
+      at router.process_params (node_modules/express/lib/router/index.js:346:12)
+      at Immediate.next (node_modules/express/lib/router/index.js:280:10)
+      at Immediate._onImmediate (node_modules/express/lib/router/index.js:646:15)
+
+  console.warn
+    [2026-04-02T09:30:33.034Z] [WARN] AppError: Invalid token. Please log in again. {"statusCode":401,"isOperational":true}
+
+    [0m [90m 62 |[39m   [90m/** Warning logs ΓÇö recoverable issues that need attention */[39m
+     [90m 63 |[39m   warn(message[33m:[39m string[33m,[39m context[33m?[39m[33m:[39m [33mRecord[39m[33m<[39m[33mstring[39m[33m,[39m unknown[33m>[39m)[33m:[39m [36mvoid[39m {
+    [31m[1m>[22m[39m[90m 64 |[39m     console[33m.[39mwarn(formatMessage([32m'WARN'[39m[33m,[39m message[33m,[39m context))[33m;[39m
+     [90m    |[39m             [31m[1m^[22m[39m
+     [90m 65 |[39m   }[33m,[39m
+     [90m 66 |[39m
+     [90m 67 |[39m   [90m/** Error logs ΓÇö failures that need immediate investigation */[39m[0m
+
+      at Object.warn (src/utils/logger.ts:64:13)
+      at errorHandler (src/middleware/errorHandler.ts:105:12)
+      at Layer.handle_error (node_modules/express/lib/router/layer.js:71:5)
+      at trim_prefix (node_modules/express/lib/router/index.js:326:13)
+      at node_modules/express/lib/router/index.js:286:9
+      at router.process_params (node_modules/express/lib/router/index.js:346:12)
+      at Immediate.next (node_modules/express/lib/router/index.js:280:10)
+      at Immediate._onImmediate (node_modules/express/lib/router/index.js:646:15)
+
+PASS tests/auth.test.ts
+  POST /api/v1/auth/register
+    ΓêÜ should register a new user and return a JWT token (478 ms)
+    ΓêÜ should enforce VIEWER role on public registration (58 ms)
+    ΓêÜ should reject duplicate email with 409 (11 ms)
+    ΓêÜ should reject registration with invalid email (10 ms)
+    ΓêÜ should reject weak passwords (8 ms)
+    ΓêÜ should reject missing required fields (8 ms)
+  POST /api/v1/auth/login
+    ΓêÜ should login with valid credentials and return a JWT (402 ms)
+    ΓêÜ should reject login with wrong password (500 ms)
+    ΓêÜ should reject login with non-existent email (12 ms)
+    ΓêÜ should return identical error messages for wrong email and wrong password (anti-enumeration) (656 ms)
+  GET /api/v1/auth/me
+    ΓêÜ should return the current user profile with a valid token (12 ms)
+    ΓêÜ should reject requests without a token (10 ms)
+    ΓêÜ should reject requests with an invalid token (10 ms)
+System.Management.Automation.RemoteException
+Test Suites: 1 failed, 1 passed, 2 total
+Tests:       2 failed, 21 passed, 23 total
+Snapshots:   0 total
+Time:        5.243 s
+Ran all test suites.

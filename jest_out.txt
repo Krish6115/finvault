@@ -1,0 +1,9 @@
+﻿Error: Jest: Failed to parse the TypeScript config file C:\Users\sivar\OneDrive\Desktop\finvault\jest.config.ts
+  Error: Jest: 'ts-node' is required for the TypeScript configuration files. Make sure it is installed
+Error: Cannot find package 'ts-node' imported from C:\Users\sivar\OneDrive\Desktop\finvault\node_modules\jest-config\build\readConfigFileAndSetRootDir.js
+    at readConfigFileAndSetRootDir (C:\Users\sivar\OneDrive\Desktop\finvault\node_modules\jest-config\build\readConfigFileAndSetRootDir.js:116:13)
+    at async readInitialOptions (C:\Users\sivar\OneDrive\Desktop\finvault\node_modules\jest-config\build\index.js:403:13)
+    at async readConfig (C:\Users\sivar\OneDrive\Desktop\finvault\node_modules\jest-config\build\index.js:147:48)
+    at async readConfigs (C:\Users\sivar\OneDrive\Desktop\finvault\node_modules\jest-config\build\index.js:424:26)
+    at async runCLI (C:\Users\sivar\OneDrive\Desktop\finvault\node_modules\@jest\core\build\cli\index.js:151:59)
+    at async Object.run (C:\Users\sivar\OneDrive\Desktop\finvault\node_modules\jest-cli\build\run.js:130:37)
