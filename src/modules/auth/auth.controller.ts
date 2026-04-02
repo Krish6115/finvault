@@ -89,8 +89,6 @@ export async function me(
   next: NextFunction,
 ): Promise<void> {
   try {
-    // req.user is guaranteed to exist here because the
-    // authenticate middleware runs before this handler
     if (!req.user) {
       throw new AppError('Authentication required.', 401);
     }

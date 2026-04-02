@@ -47,7 +47,6 @@ async function verifyDatabaseConnection(): Promise<void> {
  * Starts the HTTP server after verifying all dependencies.
  */
 async function startServer(): Promise<void> {
-  // Verify database connectivity before accepting traffic
   await verifyDatabaseConnection();
 
   const server = app.listen(env.PORT, () => {
@@ -67,8 +66,6 @@ async function startServer(): Promise<void> {
   });
 
   // ── Graceful Shutdown ──
-  // Ensures active requests complete and database connections
-  // close cleanly when the process receives a termination signal.
 
   const gracefulShutdown = async (signal: string) => {
     logger.info(`${signal} received. Starting graceful shutdown...`);
@@ -83,7 +80,6 @@ async function startServer(): Promise<void> {
       process.exit(0);
     });
 
-    // Force shutdown if graceful shutdown takes too long
     setTimeout(() => {
       logger.error('Graceful shutdown timed out. Forcing exit.');
       process.exit(1);
@@ -94,8 +90,6 @@ async function startServer(): Promise<void> {
   process.on('SIGINT', () => gracefulShutdown('SIGINT'));
 
   // ── Unhandled Errors ──
-  // Last line of defense for unexpected errors that escape
-  // the Express error handler
 
   process.on('unhandledRejection', (reason: unknown) => {
     logger.error('Unhandled Promise Rejection', {
@@ -108,8 +102,6 @@ async function startServer(): Promise<void> {
       name: error.name,
       message: error.message,
     });
-    // Uncaught exceptions leave the app in an undefined state
-    // Shut down and let the process manager restart
     process.exit(1);
   });
 }

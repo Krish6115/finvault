@@ -18,7 +18,6 @@
 import { z } from 'zod';
 
 // ──────────────────────────────────────────────
-// Query Schemas
 // ──────────────────────────────────────────────
 
 /**
@@ -45,7 +44,6 @@ const getUsersQuery = z.object({
 });
 
 // ──────────────────────────────────────────────
-// Param Schemas
 // ──────────────────────────────────────────────
 
 /** Validates that the :id URL parameter is a valid UUID */
@@ -54,7 +52,6 @@ const userIdParam = z.object({
 });
 
 // ──────────────────────────────────────────────
-// Body Schemas
 // ──────────────────────────────────────────────
 
 /**
@@ -87,7 +84,6 @@ const updateUserBody = z
   });
 
 // ──────────────────────────────────────────────
-// Exports — formatted for the validate middleware
 // ──────────────────────────────────────────────
 
 export const getUsersQuerySchema = { query: getUsersQuery };

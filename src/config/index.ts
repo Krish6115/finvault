@@ -21,7 +21,6 @@
 import dotenv from 'dotenv';
 import { z } from 'zod';
 
-// Load .env file before validation
 dotenv.config();
 
 /**
@@ -29,12 +28,10 @@ dotenv.config();
  * with their types, defaults, and constraints.
  */
 const envSchema = z.object({
-  // Database
   DATABASE_URL: z
     .string({ required_error: 'DATABASE_URL is required' })
     .min(1, 'DATABASE_URL cannot be empty'),
 
-  // Server
   PORT: z
     .string()
     .default('3000')
@@ -45,7 +42,6 @@ const envSchema = z.object({
     .enum(['development', 'production', 'test'])
     .default('development'),
 
-  // JWT Authentication
   JWT_SECRET: z
     .string({ required_error: 'JWT_SECRET is required' })
     .min(8, 'JWT_SECRET must be at least 8 characters'),
@@ -54,7 +50,6 @@ const envSchema = z.object({
     .string()
     .default('7d'),
 
-  // Rate Limiting
   RATE_LIMIT_WINDOW_MS: z
     .string()
     .default('900000')

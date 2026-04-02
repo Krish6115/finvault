@@ -36,39 +36,28 @@ import dashboardRoutes from './modules/dashboard/dashboard.routes';
 import { setupSwagger } from './config/swagger';
 
 // ──────────────────────────────────────────────
-// Initialize Express Application
 // ──────────────────────────────────────────────
 
 const app = express();
 
 // ──────────────────────────────────────────────
-// Global Middleware
 // ──────────────────────────────────────────────
 
-// Security headers — protects against common web vulnerabilities
-// (XSS, clickjacking, MIME sniffing, etc.)
 app.use(helmet());
 
-// CORS — allows cross-origin requests from frontend clients
-// In production, restrict `origin` to your actual domain
 app.use(cors({
   origin: env.NODE_ENV === 'production' ? false : '*',
   methods: ['GET', 'POST', 'PATCH', 'DELETE'],
   allowedHeaders: ['Content-Type', 'Authorization'],
 }));
 
-// Rate limiting — protects against abuse and brute-force
 app.use('/api', generalLimiter);
 
-// Body parsing — parses incoming JSON payloads
-// Limit set to 10kb to prevent oversized payload attacks
 app.use(express.json({ limit: '10kb' }));
 
-// URL-encoded form parsing (for compatibility)
 app.use(express.urlencoded({ extended: true, limit: '10kb' }));
 
 // ──────────────────────────────────────────────
-// Health Check Endpoint
 // ──────────────────────────────────────────────
 
 /**
@@ -90,7 +79,6 @@ app.get('/api/v1/health', (_req, res) => {
 });
 
 // ──────────────────────────────────────────────
-// API Routes
 // ──────────────────────────────────────────────
 
 app.use('/api/v1/auth', authRoutes);
@@ -99,13 +87,11 @@ app.use('/api/v1/records', recordRoutes);
 app.use('/api/v1/dashboard', dashboardRoutes);
 
 // ──────────────────────────────────────────────
-// Swagger API Documentation
 // ──────────────────────────────────────────────
 
 setupSwagger(app);
 
 // ──────────────────────────────────────────────
-// 404 Handler — Catch unmatched routes
 // ──────────────────────────────────────────────
 
 app.all('*', (req, _res, next) => {
@@ -113,7 +99,6 @@ app.all('*', (req, _res, next) => {
 });
 
 // ──────────────────────────────────────────────
-// Global Error Handler — Must be registered last
 // ──────────────────────────────────────────────
 
 app.use(errorHandler);

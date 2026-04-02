@@ -57,10 +57,6 @@ interface ValidationSchemas {
 export function validate(schemas: ValidationSchemas) {
   return (req: Request, _res: Response, next: NextFunction): void => {
     try {
-      // Validate and replace each specified request property.
-      // Using .parse() instead of .safeParse() lets us throw
-      // ZodError directly, which the global error handler
-      // formats into a clean response.
 
       if (schemas.body) {
         req.body = schemas.body.parse(req.body);
@@ -76,8 +72,6 @@ export function validate(schemas: ValidationSchemas) {
 
       next();
     } catch (error) {
-      // Let Zod errors pass through to the global error handler,
-      // which formats them into a structured validation response
       if (error instanceof ZodError) {
         return next(error);
       }

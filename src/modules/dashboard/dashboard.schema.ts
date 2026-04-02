@@ -40,7 +40,6 @@ const trendQuery = dateRangeQuery.extend({
     .default('monthly'),
 });
 
-// Exports formatted for the validate middleware
 export const dateRangeSchema = { query: dateRangeQuery };
 export const trendSchema = { query: trendQuery };
 

@@ -78,7 +78,6 @@ export async function getSummary(query: DateRangeQuery) {
     totalRecords: totalCount,
     incomeCount: incomeResult._count,
     expenseCount: expenseResult._count,
-    // Human-readable net position indicator
     position: netBalance >= 0 ? 'surplus' : 'deficit',
   };
 }
@@ -99,7 +98,6 @@ export async function getCategorySummary(query: DateRangeQuery) {
   const dateFilter = buildDateFilter(query.startDate, query.endDate);
   const baseWhere = { deletedAt: null, ...dateFilter };
 
-  // Fetch all category-type groupings in one query
   const grouped = await prisma.financialRecord.groupBy({
     by: ['category', 'type'],
     _sum: { amount: true },
@@ -110,7 +108,6 @@ export async function getCategorySummary(query: DateRangeQuery) {
 
   type GroupedEntry = (typeof grouped)[number];
 
-  // Separate into income and expense buckets
   const income = grouped
     .filter((g: GroupedEntry) => g.type === 'INCOME')
     .map((g: GroupedEntry) => ({
@@ -147,7 +144,6 @@ export async function getCategorySummary(query: DateRangeQuery) {
 export async function getTrends(query: TrendQuery) {
   const { startDate, endDate, period } = query;
 
-  // Default to last 6 months if no date range provided
   const effectiveEndDate = endDate ? new Date(endDate) : new Date();
   const effectiveStartDate = startDate
     ? new Date(startDate)
@@ -162,7 +158,6 @@ export async function getTrends(query: TrendQuery) {
     orderBy: { date: 'asc' },
   });
 
-  // Generate period key: "2026-03" (monthly) or "2026-W13" (weekly)
   function getPeriodKey(date: Date): string {
     if (period === 'monthly') {
       return `${date.getFullYear()}-${String(date.getMonth() + 1).padStart(2, '0')}`;
@@ -176,7 +171,6 @@ export async function getTrends(query: TrendQuery) {
     return `${d.getFullYear()}-W${String(weekNum).padStart(2, '0')}`;
   }
 
-  // Accumulate sums per period
   const periodMap = new Map<string, { income: number; expenses: number }>();
 
   for (const record of records) {
@@ -194,7 +188,6 @@ export async function getTrends(query: TrendQuery) {
     }
   }
 
-  // Convert to sorted array with net balance per period
   const trends = Array.from(periodMap.entries())
     .sort(([a], [b]) => a.localeCompare(b))
     .map(([periodKey, { income, expenses }]) => ({

@@ -51,7 +51,6 @@ export async function getUsers(query: GetUsersQuery) {
   const { page, limit } = query;
   const skip = (page - 1) * limit;
 
-  // Run count and data queries in parallel for performance
   const [total, users] = await Promise.all([
     prisma.user.count({
       where: { deletedAt: null },
@@ -123,7 +122,6 @@ export async function updateUser(
   input: UpdateUserInput,
   requesterId: string,
 ) {
-  // Prevent admins from modifying their own role/status
   if (id === requesterId) {
     throw new AppError(
       'You cannot modify your own role or status. Ask another admin.',
@@ -131,7 +129,6 @@ export async function updateUser(
     );
   }
 
-  // Verify the target user exists and is not deleted
   const existingUser = await prisma.user.findUnique({
     where: { id, deletedAt: null },
   });
@@ -140,7 +137,6 @@ export async function updateUser(
     throw new AppError('User not found.', 404);
   }
 
-  // Update only the provided fields
   const updatedUser = await prisma.user.update({
     where: { id },
     data: {
@@ -176,7 +172,6 @@ export async function updateUser(
  * @throws AppError(400) if trying to delete own account
  */
 export async function deleteUser(id: string, requesterId: string) {
-  // Prevent admins from deleting themselves
   if (id === requesterId) {
     throw new AppError(
       'You cannot delete your own account. Ask another admin.',
@@ -184,7 +179,6 @@ export async function deleteUser(id: string, requesterId: string) {
     );
   }
 
-  // Verify the target user exists and is not already deleted
   const existingUser = await prisma.user.findUnique({
     where: { id, deletedAt: null },
   });
@@ -193,7 +187,6 @@ export async function deleteUser(id: string, requesterId: string) {
     throw new AppError('User not found.', 404);
   }
 
-  // Soft delete: mark as deleted and deactivate
   const deletedUser = await prisma.user.update({
     where: { id },
     data: {

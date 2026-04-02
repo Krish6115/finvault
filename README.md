@@ -152,9 +152,9 @@ The seed script creates 3 users — one for each role:
 
 | Role | Name | Email | Password |
 |------|------|-------|----------|
-| **Admin** | Riya Kapoor | `admin@finvault.com` | `Admin@123` |
-| **Analyst** | Arjun Mehta | `analyst@finvault.com` | `Analyst@123` |
-| **Viewer** | Neha Sharma | `viewer@finvault.com` | `Viewer@123` |
+| **Admin** | Krishna Reddy | `admin@finvault.com` | `Admin@123` |
+| **Analyst** | Nancy Wheeler | `analyst@finvault.com` | `Analyst@123` |
+| **Viewer** | Sneha Chakraborty | `viewer@finvault.com` | `Viewer@123` |
 
 ### Quick Login via cURL
 

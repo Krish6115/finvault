@@ -42,14 +42,12 @@ import { Role } from '../types';
  */
 export function authorize(...allowedRoles: Role[]) {
   return (req: Request, _res: Response, next: NextFunction): void => {
-    // Ensure the authenticate middleware has run first
     if (!req.user) {
       return next(
         new AppError('Authentication is required before authorization.', 401),
       );
     }
 
-    // Check if the user's role is in the allowed list
     if (!allowedRoles.includes(req.user.role)) {
       return next(
         new AppError(

@@ -91,8 +91,6 @@ export async function getRecords(query: GetRecordsQuery) {
   const { page, limit, type, category, startDate, endDate, search, sortBy, order } = query;
   const skip = (page - 1) * limit;
 
-  // Build the Prisma where clause dynamically
-  // Only include filters that were actually provided
   const where: Prisma.FinancialRecordWhereInput = {
     deletedAt: null,
     ...(type && { type }),
@@ -107,7 +105,6 @@ export async function getRecords(query: GetRecordsQuery) {
           },
         }
       : {}),
-    // Text search across description AND category
     ...(search && {
       OR: [
         { description: { contains: search } },
@@ -116,7 +113,6 @@ export async function getRecords(query: GetRecordsQuery) {
     }),
   };
 
-  // Run count and data queries in parallel for performance
   const [total, records] = await Promise.all([
     prisma.financialRecord.count({ where }),
     prisma.financialRecord.findMany({
@@ -173,7 +169,6 @@ export async function getRecordById(id: string) {
  * @throws AppError(404) if not found
  */
 export async function updateRecord(id: string, input: UpdateRecordInput) {
-  // Verify the record exists before updating
   const existing = await prisma.financialRecord.findUnique({
     where: { id, deletedAt: null },
   });

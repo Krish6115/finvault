@@ -57,7 +57,6 @@ export async function authenticate(
   next: NextFunction,
 ): Promise<void> {
   try {
-    // 1. Extract the token from the Authorization header
     const authHeader = req.headers.authorization;
 
     if (!authHeader || !authHeader.startsWith('Bearer ')) {
@@ -73,7 +72,6 @@ export async function authenticate(
       throw new AppError('Authentication token is missing.', 401);
     }
 
-    // 2. Verify and decode the token
     let decoded: JwtPayload;
 
     try {
@@ -88,8 +86,6 @@ export async function authenticate(
       throw new AppError('Token verification failed.', 401);
     }
 
-    // 3. Fetch the current user from the database
-    //    This ensures we have the latest role/status, not stale JWT data
     const user = await prisma.user.findUnique({
       where: { id: decoded.id },
       select: {
@@ -102,7 +98,6 @@ export async function authenticate(
       },
     });
 
-    // 4. Verify the user still exists and is active
     if (!user || user.deletedAt) {
       throw new AppError('User account no longer exists.', 401);
     }
@@ -114,7 +109,6 @@ export async function authenticate(
       );
     }
 
-    // 5. Attach the verified user to the request
     req.user = {
       id: user.id,
       email: user.email,

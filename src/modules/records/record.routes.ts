@@ -34,7 +34,6 @@ import * as recordController from './record.controller';
 
 const router = Router();
 
-// All record routes require authentication
 router.use(authenticate);
 
 /**

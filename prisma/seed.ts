@@ -57,21 +57,21 @@ function daysAgo(days: number): Date {
 const users = [
   {
     email: 'admin@finvault.com',
-    name: 'Riya Kapoor',
+    name: 'Krishna Reddy',
     password: 'Admin@123',
     role: 'ADMIN',
     status: 'ACTIVE',
   },
   {
     email: 'analyst@finvault.com',
-    name: 'Arjun Mehta',
+    name: 'Nancy Wheeler',
     password: 'Analyst@123',
     role: 'ANALYST',
     status: 'ACTIVE',
   },
   {
     email: 'viewer@finvault.com',
-    name: 'Neha Sharma',
+    name: 'Sneha Chakraborty',
     password: 'Viewer@123',
     role: 'VIEWER',
     status: 'ACTIVE',

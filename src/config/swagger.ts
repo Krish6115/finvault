@@ -181,9 +181,6 @@ const swaggerDefinition: swaggerJsdoc.Options = {
 
     // ── Paths (all API endpoints) ──
     paths: {
-      // ═══════════════════════════════
-      // AUTH
-      // ═══════════════════════════════
       '/auth/register': {
         post: {
           tags: ['Authentication'],
@@ -227,9 +224,6 @@ const swaggerDefinition: swaggerJsdoc.Options = {
         },
       },
 
-      // ═══════════════════════════════
-      // USERS (Admin only)
-      // ═══════════════════════════════
       '/users': {
         get: {
           tags: ['Users (Admin)'],
@@ -273,9 +267,6 @@ const swaggerDefinition: swaggerJsdoc.Options = {
         },
       },
 
-      // ═══════════════════════════════
-      // FINANCIAL RECORDS
-      // ═══════════════════════════════
       '/records': {
         post: {
           tags: ['Financial Records'],
@@ -334,9 +325,6 @@ const swaggerDefinition: swaggerJsdoc.Options = {
         },
       },
 
-      // ═══════════════════════════════
-      // DASHBOARD
-      // ═══════════════════════════════
       '/dashboard/summary': {
         get: {
           tags: ['Dashboard Analytics'],
@@ -417,7 +405,6 @@ export function setupSwagger(app: Express): void {
     }),
   );
 
-  // Also expose the raw JSON spec at /api/docs.json
   app.get('/api/docs.json', (_req, res) => {
     res.setHeader('Content-Type', 'application/json');
     res.send(swaggerSpec);

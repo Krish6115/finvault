@@ -150,8 +150,6 @@ export function errorHandler(
   }
 
   // ── 4. Handle unexpected / unknown errors ──
-  // Log the full error for debugging, but never expose
-  // internal details to the client in production
   logger.error('Unexpected error', {
     name: err.name,
     message: err.message,

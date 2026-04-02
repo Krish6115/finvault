@@ -72,7 +72,6 @@ function generateToken(userId: string): string {
 export async function registerUser(input: RegisterInput) {
   const { name, email, password } = input;
 
-  // Check if the email is already taken
   const existingUser = await prisma.user.findUnique({
     where: { email },
   });
@@ -81,11 +80,8 @@ export async function registerUser(input: RegisterInput) {
     throw new AppError('An account with this email already exists.', 409);
   }
 
-  // Hash the password with a cost factor of 12
-  // (balances security and performance — ~250ms per hash)
   const hashedPassword = await bcrypt.hash(password, 12);
 
-  // Create the user with VIEWER role (hardcoded for security)
   const user = await prisma.user.create({
     data: {
       name,
@@ -97,7 +93,6 @@ export async function registerUser(input: RegisterInput) {
     select: USER_SELECT_FIELDS,
   });
 
-  // Generate a JWT for immediate login after registration
   const token = generateToken(user.id);
 
   return { user, token };
@@ -120,25 +115,20 @@ export async function registerUser(input: RegisterInput) {
 export async function loginUser(input: LoginInput) {
   const { email, password } = input;
 
-  // Find the user by email (include password for comparison)
   const user = await prisma.user.findUnique({
     where: { email },
   });
 
-  // Generic error for both "user not found" and "wrong password"
-  // to prevent attackers from enumerating valid email addresses
   if (!user || user.deletedAt) {
     throw new AppError('Invalid email or password.', 401);
   }
 
-  // Verify the password against the stored hash
   const isPasswordValid = await bcrypt.compare(password, user.password);
 
   if (!isPasswordValid) {
     throw new AppError('Invalid email or password.', 401);
   }
 
-  // Block inactive accounts from logging in
   if (user.status === 'INACTIVE') {
     throw new AppError(
       'Your account has been deactivated. Please contact an administrator.',
@@ -146,10 +136,8 @@ export async function loginUser(input: LoginInput) {
     );
   }
 
-  // Generate a JWT token
   const token = generateToken(user.id);
 
-  // Return user data without the password
   const { password: _, ...userWithoutPassword } = user;
 
   return { user: userWithoutPassword, token };

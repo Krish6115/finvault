@@ -36,7 +36,6 @@ import * as userController from './user.controller';
 
 const router = Router();
 
-// Apply authentication and admin authorization to ALL routes
 router.use(authenticate, authorize('ADMIN'));
 
 /**

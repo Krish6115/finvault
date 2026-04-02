@@ -12,7 +12,6 @@
 import { z } from 'zod';
 
 // ──────────────────────────────────────────────
-// Reusable field schemas
 // ──────────────────────────────────────────────
 
 const recordType = z.enum(['INCOME', 'EXPENSE'], {
@@ -26,7 +25,6 @@ const isoDate = z
   .transform((val) => new Date(val));
 
 // ──────────────────────────────────────────────
-// Param Schemas
 // ──────────────────────────────────────────────
 
 const recordIdParam = z.object({
@@ -34,7 +32,6 @@ const recordIdParam = z.object({
 });
 
 // ──────────────────────────────────────────────
-// Body Schemas
 // ──────────────────────────────────────────────
 
 /**
@@ -102,7 +99,6 @@ const updateRecordBody = z
   );
 
 // ──────────────────────────────────────────────
-// Query Schemas
 // ──────────────────────────────────────────────
 
 /**
@@ -161,7 +157,6 @@ const getRecordsQuery = z.object({
 });
 
 // ──────────────────────────────────────────────
-// Exports — formatted for the validate middleware
 // ──────────────────────────────────────────────
 
 export const createRecordSchema = { body: createRecordBody };
