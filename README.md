@@ -87,6 +87,10 @@ DATABASE_URL="postgresql://user:password@localhost:5432/finvault?schema=public"
 
 And update `provider = "sqlite"` to `provider = "postgresql"` in `prisma/schema.prisma`.
 
+### Trade-off (Node.js vs. Java/Spring Boot)
+
+While my foundational programming background is firmly rooted in Java (which I use heavily for Data Structures and Algorithms) and I am familiar with the Spring Boot ecosystem, I intentionally chose Node.js for this specific assignment. I know that the FinTech industry relies heavily on Java/Spring Boot for legacy core banking systems and deep ledger reconciliation. However, for a dashboard API—which primarily handles high-volume I/O operations, data aggregation, and rapid JSON delivery to a frontend—Node.js is highly optimized. This choice reflects modern FinTech architectures, where core ledger processing happens in Java, but high-traffic dashboard API gateways are built in Node.js.
+
 ---
 
 ## 🏗️ Architecture
