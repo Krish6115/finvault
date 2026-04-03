@@ -40,6 +40,10 @@ const swaggerDefinition: swaggerJsdoc.Options = {
         url: `http://localhost:${env.PORT}/api/v1`,
         description: 'Development Server',
       },
+      {
+        url: 'https://finvault-wdmf.onrender.com/api/v1',
+        description: 'Production Server',
+      },
     ],
     // JWT Bearer Token security scheme
     components: {
