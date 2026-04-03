@@ -2,9 +2,9 @@
 
 **Finance Data Processing & Access Control Backend**
 
-A role-based financial records management system with dashboard analytics, built for the Zorvyn FinTech Backend Developer Intern assignment.
+FinVault is a production-grade FinTech backend designed to demonstrate advanced API architecture, Role-Based Access Control, and secure financial data aggregation.
 
-FinVault demonstrates a production-grade backend architecture featuring JWT authentication, role-based access control, financial record management with soft-delete, and real-time dashboard analytics — all structured with clean separation of concerns.
+It features JWT authentication, role-based access control, financial record management with soft-delete, and real-time dashboard analytics — all structured with clean separation of concerns.
 
 ---
 
@@ -118,7 +118,7 @@ And update `provider = "sqlite"` to `provider = "postgresql"` in `prisma/schema.
 
 ### Trade-off (Node.js vs. Java/Spring Boot)
 
-While my foundational programming background is firmly rooted in Java (which I use heavily for DSA) and I am familiar with the Spring Boot ecosystem, I intentionally chose Node.js for this specific assignment. I know that the FinTech industry relies heavily on Java/Spring Boot for legacy core banking systems and deep ledger reconciliation. However, for a dashboard API—which primarily handles high-volume I/O operations, data aggregation, and rapid JSON delivery to a frontend—Node.js is highly optimized. This choice reflects modern FinTech architectures, where core ledger processing happens in Java, but high-traffic dashboard API gateways are built in Node.js.
+While my foundational programming background is firmly rooted in Java (which I use heavily for DSA) and I am familiar with the Spring Boot ecosystem, I intentionally chose Node.js for this project. I know that the FinTech industry relies heavily on Java/Spring Boot for legacy core banking systems and deep ledger reconciliation. However, for a dashboard API—which primarily handles high-volume I/O operations, data aggregation, and rapid JSON delivery to a frontend—Node.js is highly optimized. This choice reflects modern FinTech architectures, where core ledger processing happens in Java, but high-traffic dashboard API gateways are built in Node.js.
 
 ---
 
@@ -390,7 +390,7 @@ The test suite includes:
 
 5. **No refresh tokens**: The current implementation uses single JWT tokens with a 7-day expiry. A production system would add refresh token rotation for better security.
 
-6. **No email verification**: Registration creates accounts immediately without email confirmation. This is intentional for the scope of this assignment.
+6. **No email verification**: Registration creates accounts immediately without email confirmation. This is intentional for the scope of this project.
 
 ---
 
@@ -417,4 +417,4 @@ MIT
 
 ---
 
-*Built with ❤️ by Krishna Reddy for the Zorvyn FinTech Backend Developer Intern Assignment*
+*Built with ❤️ by Krishna Reddy*
