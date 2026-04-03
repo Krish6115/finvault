@@ -13,7 +13,7 @@ FinVault demonstrates a production-grade backend architecture featuring JWT auth
 **Check out the live Swagger documentation and test endpoints directly:**
 👉 [https://finvault-wdmf.onrender.com/api/docs](https://finvault-wdmf.onrender.com/api/docs)
 
-> **Note:** The backend is hosted on Render's free tier. The first request may take ~50 seconds if the instance is waking up from sleep. The database **automatically re-seeds on boot** to provide a fresh testing environment for every session.
+> **Note:** The backend is hosted on Render's free tier. The first request may take ~100 seconds if the instance is waking up from sleep. The database **automatically re-seeds on boot** to provide a fresh testing environment for every session.
 
 ---
 
