@@ -17,6 +17,35 @@ FinVault demonstrates a production-grade backend architecture featuring JWT auth
 
 ---
 
+## 🧪 How to Test the Live API
+
+You can easily test the entire backend flow directly from your browser using the interactive Swagger UI. 
+
+**Step 1: Get Your Access Token (Authentication)**
+1. Scroll down to the **Authentication** section.
+2. Open `POST /api/v1/auth/login` and click **Try it out**.
+3. Enter the Admin credentials (`admin@finvault.com` / `Admin@123`) in the request body and click **Execute**.
+4. Scroll down to the server response and copy the long `token` string (without the quotes).
+
+**Step 2: Unlock the API (Authorization)**
+1. Scroll to the very top of the Swagger page and click the green **Authorize 🔓** button.
+2. Paste your token into the Value box and click **Authorize**, then **Close**. 
+3. *Note: All protected endpoints (like the Dashboard Analytics) now have a closed padlock icon, meaning you are authenticated to use them.*
+
+**Step 3: Fetch Dashboard Aggregations**
+1. Scroll down to **Dashboard Analytics**.
+2. Open `GET /api/v1/dashboard/summary`, click **Try it out**, and hit **Execute**.
+3. You will receive a `200 OK` response with the aggregated financial totals calculated dynamically by the database.
+
+**Step 4: Test Role-Based Access Control (RBAC)**
+1. Click the top **Authorize** button and click **Logout** to clear your Admin session.
+2. Repeat Step 1, but log in with the Viewer credentials (`viewer@finvault.com` / `Viewer@123`).
+3. Authorize with the new Viewer token.
+4. Try to execute `GET /api/v1/dashboard/trends` (which is strictly for Analysts and Admins).
+5. You will receive a `403 Forbidden` response, proving the RBAC middleware successfully blocks unauthorized roles.
+
+---
+
 ## 📋 Table of Contents
 
 - [Quick Start](#-quick-start)
